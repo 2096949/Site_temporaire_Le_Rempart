@@ -13,8 +13,12 @@ body {
     font-family: 'Spartan', sans-serif;
 }
 
-h1 {
+.cache {
     display: none;
+}
+
+.non-visible {
+    visibility: hidden;
 }
 
 strong {
@@ -79,20 +83,42 @@ main {
 }
 
 .slogan {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    height: 100px;
-    padding: 10px;
+    padding: 4vh 10vw 3vh;
     text-align: center;
+}
+
+#presentation div:last-child {
+    margin:auto;
+    width:80%;
+    padding: 1vh 0 4vh 0;
+
 } 
 
-.slogan, section {
-    background-image: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
+#presentation img {
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+}
+
+#presentation figure {
+    background-image: linear-gradient(to top, #f3f5f5 0%, rgb(80, 78, 78) 100%);
+    box-shadow: 0 0 0.2rem 0.2rem rgba(184, 184, 184, 0.295);
+    border-radius: 3px;
+}
+
+#presentation figcaption {
+    padding: 0.2rem 0.5rem;
 }
 
 section {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
+}
+
+section main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -102,17 +128,17 @@ section div {
     margin: 10px;
 }
 
-h2 {
+section > header > h2 {
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    height: 40px;
+    justify-content: center;
+    height: 3rem;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 
 h3 {
@@ -158,8 +184,8 @@ address {
 }
 
 .map {
-    margin: 10px auto;
-    width: 90%;
+    margin: 10px 25px;
+    width: calc(100% - 50px);
 }
 
 iframe {
@@ -167,9 +193,30 @@ iframe {
     width: 100%;
 }
 
-/* Footer */
+/* Footer de page et de sections */
 
-footer {
+section > footer {
+    text-align: right;
+    padding: 0 25px 15px;
+}
+
+section > footer > a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color:black;
+    
+}
+
+section > footer > a:hover, section > footer > a:focus {
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+section > footer > a::after {
+    content: ' \25B2';
+}
+
+ body > footer {
     background-color: #000;
     color: #fff;
     display: flex;
@@ -177,15 +224,15 @@ footer {
     padding: 10px;
 }
 
-footer div {
+body > footer div {
     width: 50%;
 }
 
-footer > div {
+body > footer > div {
     padding-right: 20px;
 }
 
-footer address {
+body > footer address {
     font-size: 0.9rem;
 }
 
@@ -236,6 +283,19 @@ footer address {
         width: 45%;
     }
 
+    #presentation div:last-child, .slogan {
+        margin: 25px 25px;
+        padding: 0;
+    }
+
+    #presentation div:last-child {
+        width: 20%;
+    }
+
+    #presentation img {
+        width: 100%;
+    }
+
     h2 {
         height: 50px;
     }
@@ -246,6 +306,7 @@ footer address {
 
     .map {
          width: 45%;
+         margin: 25px;
     }
 
     iframe {
