@@ -1,16 +1,25 @@
 /* Général */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     display: grid;
+    font-family: 'Spartan', sans-serif;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto 1fr auto;
-    font-family: 'Spartan', sans-serif;
+    color:black;
+}
+
+strong {
+    font-weight: 600;
 }
 
 .cache {
@@ -21,14 +30,20 @@ body {
     visibility: hidden;
 }
 
-strong {
-    font-weight: 600;
-}
 
 /* Header */
 
 header {
     grid-area: 1 / 1 / 2 / 5;
+}
+.test {
+    display: flex;
+    flex-direction: row;
+}
+
+body > header > div {
+    background-image: url(./assets/img/Rempart3.png);
+    background-size: cover;   
 }
 
 header div {
@@ -38,19 +53,23 @@ header div {
 }
 
 .logo_rempart {
-    width: 200px;
+    width: 200px;   
 }
 
 header p {
     align-self: flex-end;
-    margin-bottom: 15px;
-    margin-right: 10px;
+    margin-bottom: 20px;
+    margin: 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: black 1px 1px;
 }
 
 nav {
+    align-items: center;
     background-color: #000;
     display: flex;
-    align-items: center;
     height: 50px;
 }
 
@@ -94,14 +113,13 @@ main {
 
 #presentation div:last-child {
     margin:auto;
-    width:80%;
     padding: 1vh 0 4vh 0;
-
+    width:80%;
 } 
 
 #presentation img {
-    width: 100%;
     border-radius: 3px 3px 0 0;
+    width: 100%;
 }
 
 #presentation figure {
@@ -111,17 +129,20 @@ main {
 }
 
 #presentation figcaption {
-    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    text-align: right;
 }
 
 section {
-    background-image: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
+    background: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
 }
 
 section main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 50px;
 }
 
 section div {
@@ -129,10 +150,10 @@ section div {
 }
 
 section > header > h2 {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
-    height: 3rem;
+    height: 120px;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
@@ -143,8 +164,8 @@ section > header > h2 {
 
 h3 {
     padding: 10px 0;
-    font-size: 1.15rem;
     font-weight: 600;
+    font-size: 1.15rem;  
 }
 
 div ul li {
@@ -156,7 +177,7 @@ div ul li::before {
 }
 
 div ul li, main p, address {
-    line-height: 130%;
+    line-height: 200%;
 }
 
 #services {
@@ -216,7 +237,7 @@ section > footer > a::after {
     content: ' \25B2';
 }
 
- body > footer {
+body > footer {
     background-color: #000;
     color: #fff;
     display: flex;
@@ -233,12 +254,18 @@ body > footer > div {
 }
 
 body > footer address {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
+    margin-left: 10px;
+    
 }
 
 .info_importante {
     font-size: 0.8rem;
     padding-top: 10px;
+}
+
+.info_importante > p {
+    margin-left: 20px;
 }
 
 .info_importante::before, .info_importante::after {
@@ -247,11 +274,11 @@ body > footer address {
 
 .partenaires {
     border-left: 1px solid #fff;
-    padding-left: 20px;
+    padding: 10px 0 10px 20px;
 }
 
 .logo_caisse {
-    margin-top: 10px;
+    margin: 30px 0;
     width: 170px;
 }
 
@@ -312,5 +339,9 @@ body > footer address {
     iframe {
         height: 400px;
         width: 100%;
+    }
+
+    body > footer address {
+        font-size: 0.9rem;   
     }
 }
