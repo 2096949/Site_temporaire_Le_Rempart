@@ -11,39 +11,34 @@ html {
 }
 
 body {
+    color: #000;
     display: grid;
     font-family: 'Spartan', sans-serif;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto 1fr auto;
-    color:black;
 }
 
 strong {
     font-weight: 600;
 }
 
-.cache {
-    display: none;
-}
-
-.non-visible {
+h1 {
+    position: absolute;
+    left: -150vw;
     visibility: hidden;
 }
-
 
 /* Header */
 
 header {
     grid-area: 1 / 1 / 2 / 5;
 }
-.test {
-    display: flex;
-    flex-direction: row;
-}
 
-body > header > div {
+.header_principal {
+    background-color: rgba(255, 255, 255, 0.5);
     background-image: url(./assets/img/Rempart3.png);
-    background-size: cover;   
+    background-blend-mode: screen;
+    background-size: cover;
 }
 
 header div {
@@ -53,17 +48,16 @@ header div {
 }
 
 .logo_rempart {
-    width: 200px;   
+    width: 200px;
 }
 
 header p {
     align-self: flex-end;
-    margin-bottom: 20px;
-    margin: 20px;
-    font-weight: bold;
-    color: white;
-    font-size: 1.5rem;
-    text-shadow: black 1px 1px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px #fff;
 }
 
 nav {
@@ -91,7 +85,9 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover, nav ul li a:active, nav ul li a:focus {
+nav ul li a:hover, 
+nav ul li a:active, 
+nav ul li a:focus {
     text-decoration: underline;
 }
 
@@ -102,68 +98,66 @@ main {
 }
 
 .slogan {
-    flex-grow: 1;
+    background: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     font-size: 1.1rem;
-    padding: 4vh 10vw 3vh;
+    padding: 15px;
     text-align: center;
 }
 
-#presentation div:last-child {
-    margin:auto;
-    padding: 1vh 0 4vh 0;
-    width:80%;
-} 
+.slogan p {
+    padding: 10px;
+}
 
-#presentation img {
+.slogan img {
     border-radius: 3px 3px 0 0;
     width: 100%;
 }
 
-#presentation figure {
-    background-image: linear-gradient(to top, #f3f5f5 0%, rgb(80, 78, 78) 100%);
+figure {
+    background: linear-gradient(to top, #f3f5f5 0%, rgb(80, 78, 78) 100%);
     box-shadow: 0 0 0.2rem 0.2rem rgba(184, 184, 184, 0.295);
     border-radius: 3px;
+    margin: auto;
+    margin-top: 15px;
+    width: 70%;
 }
 
-#presentation figcaption {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.8rem;
+figcaption {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
     text-align: right;
 }
 
 section {
     background: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
-}
-
-section main {
+    padding-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 50px;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 section div {
-    margin: 10px;
+    margin: 10px 15px;
 }
 
-section > header > h2 {
+h2 {
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 120px;
     text-align: center;
     text-transform: uppercase;
-    width: 100%;
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 500;
+    height: 40px;
+    width: 100%;
 }
 
 h3 {
-    padding: 10px 0;
+    padding: 15px 0;
     font-weight: 600;
     font-size: 1.15rem;  
 }
@@ -177,7 +171,7 @@ div ul li::before {
 }
 
 div ul li, main p, address {
-    line-height: 200%;
+    line-height: 135%;
 }
 
 #services {
@@ -196,6 +190,10 @@ div ul li, main p, address {
     background: linear-gradient(to right, rgb(255, 151, 112, 0.7) 0%, #ff9770 50%, rgb(255, 151, 112, 0.7) 100%);
 }
 
+.adresse {
+    width: 100%;
+}
+
 address {
     font-style: normal;
 }
@@ -205,8 +203,7 @@ address {
 }
 
 .map {
-    margin: 10px 25px;
-    width: calc(100% - 50px);
+    width: 90%;
 }
 
 iframe {
@@ -217,19 +214,19 @@ iframe {
 /* Footer de page et de sections */
 
 section > footer {
+    padding: 15px 15px 0 0;
     text-align: right;
-    padding: 0 25px 15px;
+    width: 100%;
 }
 
 section > footer > a {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     text-decoration: none;
-    color:black;
-    
-}
+    color: #000;  
+} 
 
-section > footer > a:hover, section > footer > a:focus {
-    font-size: 1.1rem;
+section > footer > a:hover, 
+section > footer > a:focus {
     text-decoration: underline;
 }
 
@@ -241,8 +238,9 @@ body > footer {
     background-color: #000;
     color: #fff;
     display: flex;
+    font-size: 0.9rem;
     grid-area: 3 / 1 / 4 / 5;
-    padding: 10px;
+    padding: 15px;
 }
 
 body > footer div {
@@ -253,28 +251,19 @@ body > footer > div {
     padding-right: 20px;
 }
 
-body > footer address {
-    font-size: 0.6rem;
-    margin-left: 10px;
-    
-}
-
 .info_importante {
     font-size: 0.8rem;
     padding-top: 10px;
 }
 
-.info_importante > p {
-    margin-left: 20px;
-}
-
-.info_importante::before, .info_importante::after {
+.info_importante::before, 
+.info_importante::after {
     content: "\2605";
 }
 
 .partenaires {
     border-left: 1px solid #fff;
-    padding: 10px 0 10px 20px;
+    padding-left: 20px;
 }
 
 .logo_caisse {
@@ -293,8 +282,7 @@ body > footer address {
     }
 
     header p {
-        margin-bottom: 25px;
-        margin-right: 20px;
+        margin: 20px;
     }
 
     nav {
@@ -310,17 +298,17 @@ body > footer address {
         width: 45%;
     }
 
-    #presentation div:last-child, .slogan {
-        margin: 25px 25px;
-        padding: 0;
+    .slogan p {
+        padding: 25px;
+        font-weight: 600;
     }
 
-    #presentation div:last-child {
-        width: 20%;
+    figure {
+        width: 60%;
     }
 
-    #presentation img {
-        width: 100%;
+    .adresse {
+        width: 45%;
     }
 
     h2 {
@@ -328,12 +316,12 @@ body > footer address {
     }
 
     h3 {
-        padding: 15px 0;
+        padding: 20px 0;
     }
 
     .map {
-         width: 45%;
-         margin: 25px;
+        padding-top: 15px;
+        width: 45%;
     }
 
     iframe {
@@ -341,7 +329,7 @@ body > footer address {
         width: 100%;
     }
 
-    body > footer address {
-        font-size: 0.9rem;   
+    body > footer {
+        padding: 20px;
     }
 }
