@@ -201,6 +201,11 @@ address {
     color: #fff;
 }
 
+.logo_fb {
+    width: 40px;
+    padding-top: 10px;
+}
+
 .map {
     width: 90%;
 }
@@ -308,6 +313,10 @@ body > footer > div {
 
     .adresse {
         width: 45%;
+    }
+
+    .logo_fb {
+        width: 50px;
     }
 
     h2 {
